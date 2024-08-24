@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Lavishly+Yours&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+</head>
+<body>   
+    <div id="pre-invitation" class="position-fixed">
+        <div class="opening" style="background-image: url(images/bg.svg);">
+            <div class="frame">
+                <div class="frame-tl frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div class="undangan1">Undangan Pernikahan</div>
+                <h1 class="display-4">Irdhina </br>& </br>Syauqy</h1>
+                <div class="yth animate__animated animate__fadeInUp animate__slower text-center" style="font-size:14px;">Kepada Yth:<br />Bapak/Ibu/Saudara/i</div>
+                <p class="guest-name">[Nama Tamu]</p>
+            <button class="btn btn-primary" onclick="openInvitation()">Buka Undangan</button>
+        </div>
+    </div>
+    <div id="workspace-container" class="position-fixed h-100 w-100 full-screen" style="overflow: hidden;">
+        <div class="container mb-4" style="background-image: url(images/bg.svg);">
+        <div id="home" class="page" style="background-image: url(images/6.5.png); background-repeat: no-repeat; background-position: center; background-size: 350px;">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div class="pengantin text-center">
+                <div class="undangan">Undangan Pernikahan</div>
+                <h1 class="display-4">Irdhina </br>& </br>Syauqy</h1>
+                <p class="tanggal">22 September 2024</p>
+            </div>
+        </div>        
+        <div id="nama" class="page" style="background-image: url(images/8.png); background-repeat: no-repeat; background-position: center; background-size: 350px;">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div id="bg-kartu" class="kartu">     
+            <div class="pembukaan text-center">
+                <div class="salam font-italic mb-3" style="font-size:14.4px; font-family: Merienda, cursive; font-weight: bold;">Assalamu'alaikum Wr. Wb.</div>
+                <div class="pembuka mb-3" style="font-size:14.4px;">Dengan rahmat Allah SWT.<br />kami bermaksud menyelenggarakan<br />Pernikahan Putra-Putri kami</div>
+                <div class="nama-pengantin wanita">Irdhina Arbain, SH.</div>
+                <div class="_16dark bottom20" style="font-size:14.4px; padding-left:20px; padding-right:20px;" >Putri dari Bpk. Muhammad Syarbaini </br>dan Ibu Dewi Yana</div>
+                <div class="nama-pengantin dan">&amp;</div>
+                <div class="nama-pengantin pria">Muhammad Syauqy, SH.</div>
+                <div class="_16dark bottom20" style="font-size:14.4px;  padding-left:20px; padding-right:20px;" >Putra dari Bpk. Sudiran, M.Pd. </br>dan Ibu Siti Mour Harahap, S.Pd.</div>
+            </div>
+        </div>
+        </div>
+        <div id="jadwal" class="page rapi">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div data-aos="fade-up" class="shadow" style="background: url('images/8.png'); border-radius: 20px; background-size: cover; background-position: center center; width: 250px;">
+                <div id="bg-kartu" class="kartu3">
+                <h1 style="margin-bottom: 13px; font-size: 24px; text-align: center;" id="ac1-h1-id1" data-aos="fade-up">Akad Pernikahan</h1>
+                <h3 style="font-size: 18px; font-weight: 400; text-align: center;" id="date-ac1-id1">Ahad, 22 September 2024</h3>
+                <p style="margin-bottom: 13px; font-size: 13px; text-align: center;" data-aos="fade-up" class="map_id2" data-aos="fade-up" id="ac1-h3-id5">Pukul 08:00 - 10:00 WIB</p>
+                <p style="font-size: 13px; text-align: center;" data-aos="fade-up" data-aos="zoom-in-up" id="ac1-h3-id6" >Jl. Pemuda No. 60 H Tanjung Pura</p>
+                </div>
+            </div>
+            <br>
+            <div data-aos="fade-up" class="shadow" style="background: url('images/8.png'); border-radius: 20px; background-size: cover; background-position: center center; width: 250px;">
+                <div id="bg-kartu" class="kartu3">
+                <h1 style="margin-bottom: 13px; font-size: 24px; text-align: center;" id="ac2-h1-id1" data-aos="fade-up">Resepsi Pernikahan</h1>
+                <h3 style="font-size: 18px; font-weight: 400; text-align: center;" id="date-ac2-id1">Ahad, 22 September 2024</h3>
+                <p style="margin-bottom: 13px; font-size: 13px; text-align: center;" data-aos="fade-up" class="map_id2" data-aos="fade-up" id="ac2-h3-id5">Pukul 11:00 WIB - Selesai</p>
+                <p style="font-size: 13px; text-align: center;" data-aos="fade-up" data-aos="zoom-in-up" id="ac2-h3-id6" >Jl. Pemuda No. 60 H Tanjung Pura</p>
+                </div>
+            </div>
+             <!-- Countdown Timer -->
+             <div id="countdown">
+                <div class="countdown-item">
+                    <div class="number" id="days"></div>
+                    <div class="label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="hours"></div>
+                    <div class="label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="minutes"></div>
+                    <div class="label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="number" id="seconds"></div>
+                    <div class="label">Detik</div>
+                </div>
+            </div>
+        </div>
+        <div id="turut" class="page" style="background-image: url(images/8.png); background-repeat: no-repeat; background-position: center; background-size: 350px;">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div id="bg-kartu" class="kartu2">
+                <div style="width: 100%; height: 100%;" class="page2 text-center">
+                    <div class="color-accent h4 mb-2 editable animate__animated animate__fadeInDown animate__slower" style="font-size: 28.8px;">Tanda Kasih</div>
+                    <div class="editable mb-4 animate__animated animate__fadeInDown animate__slower" style="font-size: 14.4px;">Terima kasih telah menambah semangat </br>kegembiraan pernikahan kami dengan </br>kehadiran dan hadiah indah Anda.</div>
+                    
+                    <div style="display: flex; gap: 8px;">
+                        <button id="btnCashless" class="btn-gift btn btn-block btn-primary rounded-pill animate__animated animate__fadeInUp animate__slow" style="max-width: 150px; margin: auto; font-size: 14.4px;">🎁 Non-Tunai</button>
+                        <button id="btnKirimKado" class="btn-gift btn btn-block btn-primary rounded-pill animate__animated animate__fadeInUp animate__slow" style="max-width: 150px; margin: auto; font-size: 14.4px;">🎁 Kirim Kado</button>
+                    </div>
+        
+                    <div id="cashlessContainer" class="gift-container mt-3 rounded animate__animated animate__zoomIn animate__slow" style="display: none;"> 
+                        <div class="d-flex">
+                            <div class="mx-auto">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div style="width: 80px; overflow: hidden;" class="image-editable">
+                                        <img src="images/dana.png" style="width: 100%; height: 100%; object-fit: contain;" alt="logo-dana" />
+                                    </div>
+                                    <div class="text-left pl-2">
+                                        <div class="editable account-number font-weight-bold h5 mb-0" style="font-size: 18px;">0852 7088 2185</div>
+                                        <div class="editable" style="font-size: 14.4px;">A/n: Muhammad Syauqy</div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div style="width: 80px; overflow: hidden;" class="image-editable">
+                                        <img src="images/permata.png" style="width: 100%; height: 100%; object-fit: contain;" alt="logo-permata" />
+                                    </div>
+                                    <div class="text-left pl-2">
+                                        <div class="editable account-number font-weight-bold h5 mb-0" style="font-size: 18px;">8528 0852 7088 2185</div>
+                                        <div class="editable" style="font-size: 14.4px;">A/n: Muhammad Syauqy</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="kirimKadoContainer" class="gift-container mt-3 rounded animate__animated animate__zoomIn animate__slow" style="display: none;">
+                        <div class="text-center mb-2">
+                            <div class="editable font-weight-bold h5 color-accent mb-2">Kirim Kado</div>
+                            <div class="editable mb-0" style="font-size: 14.4px;">Anda dapat mengirim kado ke:<br />Jl. Pemuda No. 60 H Tanjung Pura</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="terima-kasih" class="page">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div class="watermark h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+                <div class="w-100">
+                    <div class="penutup text-center">
+                        <div class="editable mb-3 animate__animated animate__fadeInDown animate__slower" style="font-size:14px;">Merupakan suatu kehormatan dan kebahagiaan </br>bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir </br>untuk memberikan doa restu kepada kedua mempelai</div><div class="editable animate__animated animate__fadeInDown animate__slow font-weight-bold" style="font-size:14px;">Hormat Kami Yang Mengundang</div>
+                        <div class="pengantin-tutup" style="font-size:30px;">Irdhina &amp; Syauqy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="maps" class="page">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                <div style="width:100%;"><div class="editable text-center color-accent mb-3 animate__animated animate__fadeInDown animate__slow" style="font-size:24px;">Lokasi Acara</div>
+                    <div>
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 2rem .5rem; margin-bottom: 20px; border: 4px solid var(--inv-border);" class="image-editable animate__animated animate__fadeInDown animate__slow">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d248.7870213519187!2d98.42301757278845!3d3.8971849577308237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f60!4m6!3e6!4m0!4m3!3m2!1d3.8971424999999997!2d98.4230638!5e0!3m2!1sid!2sid!4v1724397068605!5m2!1sid!2sid" width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="text-center animate__animated animate__fadeInUp animate__slow">
+                            <div class="editable color-accent" style="font-size:14.4px;">Kedai Sarapan (sebelah Diva Salon)</div>
+                            <div class="editable mb-3" style="font-size:14px;">Jl. Pemuda No. 60 H, Kel. Pekan Tanjung Pura, Kec. Tanjung Pura, Kab. Langkat, Sumatera Utara 20853</div>
+                                <a href="https://maps.app.goo.gl/4SZECFGJJr8zR5aU7" class="link btn btn-primary rounded-pill mb-4 animate__animated animate__fadeInUp animate__slow" target="_blank" rel="nofollow noreferrer noopener">Buka Maps</a>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+       <nav class="navbar fixed-bottom navbar-light">
+        <div class="kotak-nav">
+            <ul class="navbar-nav d-flex flex-row justify-content-between w-100">
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('home')">
+                        <i class="fas fa-home"></i>
+                        <span>Utama</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('nama')">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Mempelai</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('jadwal')">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Jadwal</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('turut')">
+                        <i class="fas fa-users"></i>
+                        <span>Hadiah</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('maps')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lokasi</span>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn w-100" onclick="showPage('terima-kasih')">
+                        <i class="fas fa-heart"></i>
+                        <span>Thanks</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
