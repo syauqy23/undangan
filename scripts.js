@@ -1,3 +1,6 @@
+let pages = document.querySelectorAll('.page');
+let currentPageIndex = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const pages = document.querySelectorAll('.page');
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let currentPageIndex = 0;
-    
+
     document.addEventListener('wheel', (event) => {
         if (event.deltaY > 0) {
             // Scroll down
