@@ -1,6 +1,5 @@
 let pages = document.querySelectorAll('.page');
 let currentPageIndex = 0;
-
 document.addEventListener('DOMContentLoaded', () => {
     
     const pages = document.querySelectorAll('.page');
@@ -181,6 +180,15 @@ function showPage(pageId) {
     if (activeBtn) {
         activeBtn.classList.add('active');
     }
+    // Update navbar menu item's active state
+  const navbarMenuItems = document.querySelectorAll('.navbar-nav .nav-item');
+  navbarMenuItems.forEach(item => {
+    if (item.getAttribute('data-page-id') === pageId) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+    });
     }
 
 function startCountdown() {
