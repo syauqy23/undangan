@@ -1,7 +1,43 @@
-let currentPageIndex = 0;
-
 document.addEventListener('DOMContentLoaded', () => {
     
+    const pages = document.querySelectorAll('.page');
+    let startX, startY, endX, endY;
+
+    document.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].pageX;
+        startY = event.touches[0].pageY;
+    });
+
+    document.addEventListener('touchend', (event) => {
+        endX = event.changedTouches[0].pageX;
+        endY = event.changedTouches[0].pageY;
+
+        const deltaX = Math.abs(endX - startX);
+        const deltaY = Math.abs(endY - startY);
+
+        if (deltaX > deltaY) {
+            if (endX > startX) {
+                // Swipe right
+                showPage('next');
+            } else {
+                // Swipe left
+                showPage('prev');
+            }
+        }
+    });
+
+    let currentPageIndex = 0;
+    
+    document.addEventListener('wheel', (event) => {
+        if (event.deltaY > 0) {
+            // Scroll down
+            showPage('next');
+        } else {
+            // Scroll up
+            showPage('prev');
+        }
+    });
+
     // Inisiasi countdown dan event listeners
     showPage('home');    
     startCountdown();
@@ -49,6 +85,20 @@ function requestFullscreen() {
 }
 
 function showPage(pageId) {
+    if (pageId === 'next') {
+        currentPageIndex++;
+        if (currentPageIndex >= pages.length) {
+            currentPageIndex = 0;
+        }
+        pageId = pages[currentPageIndex].id;
+    } else if (pageId === 'prev') {
+        currentPageIndex--;
+        if (currentPageIndex < 0) {
+            currentPageIndex = pages.length - 1;
+        }
+        pageId = pages[currentPageIndex].id;
+    }
+    
     // Semua halaman disembunyikan dengan menambahkan class 'd-none'
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => {
