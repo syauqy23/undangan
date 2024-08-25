@@ -31,7 +31,7 @@
             <div class="undangan1">Undangan Pernikahan</div>
                 <h1 class="display-4">Irdhina </br>& </br>Syauqy</h1>
                 <div class="yth animate__animated animate__fadeInUp animate__slower text-center" style="font-size:14px;">Kepada Yth:<br />Bapak/Ibu/Saudara/i</div>
-                <p class="guest-name">[Nama Tamu]</p>
+                <p class="guest-name" id="tamu-name">[Nama Tamu]</p>
             <button class="btn btn-primary" onclick="openInvitation()">Buka Undangan</button>
         </div>
     </div>
@@ -238,12 +238,12 @@
             <div class="d-flex justify-content-center align-items-center" style="height:100%;">
                 <div style="width:100%;"><div class="editable text-center color-accent mb-3 animate__animated animate__fadeInDown animate__slow" style="font-size:24px;">Lokasi Acara</div>
                     <div>
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 2rem .5rem; margin-bottom: 20px; border: 4px solid var(--inv-border);" class="image-editable animate__animated animate__fadeInDown animate__slow">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d248.7870213519187!2d98.42301757278845!3d3.8971849577308237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f60!4m6!3e6!4m0!4m3!3m2!1d3.8971424999999997!2d98.4230638!5e0!3m2!1sid!2sid!4v1724397068605!5m2!1sid!2sid" width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div style="position: relative; padding-bottom: 56.25%; height: 280px; overflow: hidden; border-radius: 2rem .5rem; margin-bottom: 20px; border: 4px solid var(--inv-border);" class="image-editable animate__animated animate__fadeInDown animate__slow">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d248.7870213519187!2d98.42301757278845!3d3.8971849577308237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f70!4m6!3e6!4m0!4m3!3m2!1d3.8971424999999997!2d98.4230638!5e0!3m2!1sid!2sid!4v1724397068605!5m2!1sid!2sid" width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                         <div class="text-center animate__animated animate__fadeInUp animate__slow">
                             <div class="editable color-accent" style="font-size:14.4px;">Kedai Sarapan (sebelah Diva Salon)</div>
-                            <div class="editable mb-3" style="font-size:14px;">Jl. Pemuda No. 60 H, Kel. Pekan Tanjung Pura, Kec. Tanjung Pura, Kab. Langkat, Sumatera Utara 20853</div>
+                            <div class="editable mb-3" style="font-size:14px;">Jl. Pemuda No. 60 H, Kel. Pekan Tanjung Pura, Kec. Tanjung Pura, Kab. Langkat, Sumatera Utara, 20853</div>
                                 <a href="https://maps.app.goo.gl/4SZECFGJJr8zR5aU7" class="link btn btn-primary rounded-pill mb-4 animate__animated animate__fadeInUp animate__slow" target="_blank" rel="nofollow noreferrer noopener">Buka Maps</a>
                         </div>    
                     </div>
@@ -251,7 +251,7 @@
             </div>
         </div>
        </div>
-       <nav class="navbar fixed-bottom navbar-light">
+       <nav class="navbar fixed-bottom navbar-light shadow">
         <div class="kotak-nav">
             <ul class="navbar-nav d-flex flex-row justify-content-between w-100">
                 <li class="nav-item" data-page-id="home">
