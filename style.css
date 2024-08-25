@@ -402,6 +402,11 @@ undangan1 {
   border-bottom: 0px none #000;
 }
 
+.mb-4,
+.my-4 {
+  margin-bottom: 0rem !important;
+}
+
 .mt-3,
 .my-3 {
   margin-top: 1.5rem !important;
