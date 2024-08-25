@@ -1,593 +1,605 @@
 body {
-    font-family: "Alkatra", system-ui;
-    background-color: #e8d5ab;
-    color: #641b0f;
+  font-family: "Alkatra", system-ui;
+  background-color: #e8d5ab;
+  color: #641b0f;
 }
 
 /* Styling untuk halaman pembuka undangan */
 #pre-invitation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 430px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 430px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
 }
 
 .opening {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; /* Add relative positioning to the invitation container */
-    z-index: 1; /* Move the invitation on top of the frame */
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; /* Add relative positioning to the invitation container */
+  z-index: 1; /* Move the invitation on top of the frame */
 }
 
 .opening h1 {
-    font-family: "Lavishly Yours", cursive;
-    text-align: center;
+  font-family: "Lavishly Yours", cursive;
+  text-align: center;
 }
 
 .full-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 9999; /* Ensure it covers the entire screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 9999; /* Ensure it covers the entire screen */
 }
 
 #pre-invitation .guest-name {
-    font-family: "Merienda", cursive;
-    font-size: 20px;
-    font-weight: bold;
+  font-family: "Merienda", cursive;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .animate__animated.animate__slow {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    -webkit-animation-duration: calc(var(--animate-duration)* 2);
-    animation-duration: calc(var(--animate-duration)* 2);
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-duration: calc(var(--animate-duration) * 2);
+  animation-duration: calc(var(--animate-duration) * 2);
 }
 
 img {
-    vertical-align: middle;
-    border-style: none;
+  vertical-align: middle;
+  border-style: none;
 }
 
 .animate__fadeInTopLeft {
-    -webkit-animation-name: fadeInTopLeft;
-    animation-name: fadeInTopLeft;
+  -webkit-animation-name: fadeInTopLeft;
+  animation-name: fadeInTopLeft;
 }
 
 .animate__fadeInTopRight {
-    -webkit-animation-name: fadeInTopRight;
-    animation-name: fadeInTopRight;
+  -webkit-animation-name: fadeInTopRight;
+  animation-name: fadeInTopRight;
 }
 
 .animate__animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-duration: var(--animate-duration);
-    animation-duration: var(--animate-duration);
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
 .frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1; /* Move the frame behind the invitation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Move the frame behind the invitation */
 }
 
 .frame-tl {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
-    opacity: .5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  opacity: 0.5;
 }
 
 .frame-tr {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 50%;
-    opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 50%;
+  opacity: 0.5;
 }
 
 .frame-bl {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60%;
-    height: 30%;
-    opacity: .5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 30%;
+  opacity: 0.5;
 }
 
 .frame-br {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%;
-    height: 25%;
-    opacity: .5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 25%;
+  opacity: 0.5;
 }
 
 .blow-left {
-    animation: blowLeft 4s linear infinite;
+  animation: blowLeft 4s linear infinite;
 }
 
 .blow-right {
-    animation: blowRight 4s linear infinite;
+  animation: blowRight 4s linear infinite;
 }
 
 @keyframes blowLeft {
-    0% {
-      transform: skew(0) rotate(0);
-    }
-    25% {
-      transform: skew(0, 2deg) rotate(2deg);
-    }
-    50% {
-      transform: skew(0) rotate(0);
-    }
-    75% {
-      transform: skew(0, -2deg) rotate(-2deg);
-    }
-    100% {
-      transform: skew(0) rotate(0);
-    }
+  0% {
+    transform: skew(0) rotate(0);
   }
-  
-  @keyframes blowRight {
-    0% {
-      transform: skew(0) rotate(0);
-    }
-    25% {
-      transform: skew(0, -2deg) rotate(-2deg);
-    }
-    50% {
-      transform: skew(0) rotate(0);
-    }
-    75% {
-      transform: skew(0, 2deg) rotate(2deg);
-    }
-    100% {
-      transform: skew(0) rotate(0);
-    }
+  25% {
+    transform: skew(0, 2deg) rotate(2deg);
   }
+  50% {
+    transform: skew(0) rotate(0);
+  }
+  75% {
+    transform: skew(0, -2deg) rotate(-2deg);
+  }
+  100% {
+    transform: skew(0) rotate(0);
+  }
+}
+
+@keyframes blowRight {
+  0% {
+    transform: skew(0) rotate(0);
+  }
+  25% {
+    transform: skew(0, -2deg) rotate(-2deg);
+  }
+  50% {
+    transform: skew(0) rotate(0);
+  }
+  75% {
+    transform: skew(0, 2deg) rotate(2deg);
+  }
+  100% {
+    transform: skew(0) rotate(0);
+  }
+}
 
 #workspace-container {
-    max-width: 430px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+  max-width: 430px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
 
 .frame-ws {
-    position: absolute;
-    top: 0;
-    width: 108%;
-    height: 150%;
-    transform: translate(0, 0);
-    z-index: -1; /* Move the frame behind the invitation */
+  position: absolute;
+  top: 0;
+  width: 108%;
+  height: 150%;
+  transform: translate(0, 0);
+  z-index: -1; /* Move the frame behind the invitation */
 }
 
 .frame-tl-ws {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    padding-top: 10px;
-    opacity: .2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  padding-top: 10px;
+  opacity: 0.2;
 }
 
 .frame-tr-ws {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 50%;
-    padding-top: 20px;
-    opacity: .2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  padding-top: 20px;
+  opacity: 0.2;
 }
 
 .frame-bl-ws {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40%;
-    height: 50%;
-    opacity: .2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 50%;
+  opacity: 0.2;
 }
 
 .frame-br-ws {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 70%;
-    height: 53%;
-    opacity: .2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 53%;
+  opacity: 0.2;
 }
 
 /* Mengatur ukuran halaman konten */
 .page {
-    height: 100%;
-    margin: 0 auto; /* Untuk membuatnya berada di tengah */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  height: 100%;
+  margin: 0 auto; /* Untuk membuatnya berada di tengah */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .page2 {
-    height: 100%;
-    margin: 0 auto; /* Untuk membuatnya berada di tengah */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  height: 100%;
+  margin: 0 auto; /* Untuk membuatnya berada di tengah */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .page.rapi {
-    padding: 0;
+  padding: 0;
 }
 
 .kartu {
-    margin-top: -30px;
-    width: 100%;
-    padding: 10vh 4vh 8vh;
-    background-color: rgba(240, 217, 185, 0.7);
-    background-size: 300px 300px;
-    background-position: center;
-    border-radius: 15px;
+  margin-top: -30px;
+  width: 100%;
+  padding: 10vh 4vh 8vh;
+  background-color: rgba(240, 217, 185, 0.7);
+  background-size: 300px 300px;
+  background-position: center;
+  border-radius: 15px;
 }
 
 .kartu2 {
-    margin-top: -30px;
-    width: 100%;
-    height: 70%;
-    background-color: rgba(240, 217, 185, 0.7);
-    background-size: 300px 300px;
-    background-position: center;
-    border-radius: 15px;
+  margin-top: -30px;
+  width: 100%;
+  height: 70%;
+  background-color: rgba(240, 217, 185, 0.7);
+  background-size: 300px 300px;
+  background-position: center;
+  border-radius: 15px;
 }
 
 .kartu3 {
-    border-radius: 20px;
-    padding: 20px 5px 0px 5px;
-    width: 250px;
-    background-color: rgba(240, 217, 185, 0.7);
-    height: 100%;
-    color: #641b0f;
+  border-radius: 20px;
+  padding: 20px 5px 0px 5px;
+  width: 250px;
+  background-color: rgba(240, 217, 185, 0.7);
+  height: 100%;
+  color: #641b0f;
 }
 
 .container.mb-4 {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 .yth {
-    margin-top: 50px !important;
+  margin-top: 50px !important;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .harinya {
-    align-items: center;
+  align-items: center;
 }
 
 /* Agar konten internal bisa di-scroll jika melebihi ukuran yang ditentukan */
 .page .card {
-    overflow-y: auto;
-    max-height: 100%;
-    width: 100%;
+  overflow-y: auto;
+  max-height: 100%;
+  width: 100%;
 }
 
 undangan1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .undangan {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .tanggal {
-    margin-top: 30px;
-    font-size: 15px;
+  margin-top: 30px;
+  font-size: 15px;
 }
 
 .h-100 {
-    height: 100% !important;
+  height: 100% !important;
 }
 
 .w-100 {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .position-fixed {
-    position: fixed !important;
+  position: fixed !important;
 }
 
 .pengantin {
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    padding: 10vh 4vh 8vh;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    flex-direction: column;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 10vh 4vh 8vh;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .pengantin h1 {
-    font-family: "Lavishly Yours", cursive;
+  font-family: "Lavishly Yours", cursive;
 }
 
 .pengantin-tutup {
-    font-family: "Lavishly Yours", cursive;
+  font-family: "Lavishly Yours", cursive;
 }
 
 .card-body {
-    height: 100%;
-    width: 100%;
-    padding: 10vh 4vh 8vh;
+  height: 100%;
+  width: 100%;
+  padding: 10vh 4vh 8vh;
 }
 
 .pembukaan .nama-pengantin {
-    font-family: "Merienda", cursive;
-    font-size: 24.4px;
-    font-weight: bold;
-    color: #641b0f;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    flex-direction: column;
+  font-family: "Merienda", cursive;
+  font-size: 24.4px;
+  font-weight: bold;
+  color: #641b0f;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .card-body .nama-pengantin.dan {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .detail {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0px 10px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-top: 0px none #000;
-    border-bottom: 0px none #000;
-  }
-
-.mt-3, .my-3 {
-    margin-top: 1.5rem !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0px 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 0px none #000;
+  border-bottom: 0px none #000;
 }
 
-.btn.focus, .btn:focus {
-    background-color: rgba(100, 26, 15, 0.423);
-    box-shadow: 0 0 0 .2rem rgba(0, 0, 0, 0);
+.mt-3,
+.my-3 {
+  margin-top: 1.5rem !important;
+}
+
+.btn.focus,
+.btn:focus {
+  background-color: rgba(100, 26, 15, 0.423);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0);
 }
 .btn-primary {
-    background-color: #4a1008;
-    border-color: #4a1008;
+  background-color: #4a1008;
+  border-color: #4a1008;
 }
 
 .btn-primary:hover {
-    color: #fff;
-    background-color: #4a10088d;
-    border-color: #4a10088d;
+  color: #fff;
+  background-color: #4a10088d;
+  border-color: #4a10088d;
 }
 
-.btn-primary.focus, .btn-primary:focus {
-    color: #fff;
-    border-color: #e8d5ab;
+.btn-primary.focus,
+.btn-primary:focus {
+  color: #fff;
+  border-color: #e8d5ab;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 .2rem rgba(74, 16, 8, 0.076);
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(74, 16, 8, 0.076);
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: #fff;
-    background-color: #4a10088d;
-    border-color: #4a10088d;
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #4a10088d;
+  border-color: #4a10088d;
 }
 
 .navbar {
-    background-color: #e8d5ab;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+  background-color: rgba(232, 213, 171, 0.6);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .kotak-nav {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .navbar-nav .nav-item .btn {
-    width: 100%;
-    color: #641a0fca;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0; /* Mengurangi padding untuk menjaga ukuran kecil */
-    text-align: center;
+  width: 100%;
+  color: #641a0fca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0; /* Mengurangi padding untuk menjaga ukuran kecil */
+  text-align: center;
 }
 
 .navbar-nav .nav-item .btn i {
-    font-size: 24px; /* Ukuran ikon */
-    margin-bottom: 4px; /* Spasi antara ikon dan teks */
+  font-size: 24px; /* Ukuran ikon */
+  margin-bottom: 4px; /* Spasi antara ikon dan teks */
 }
 
 .navbar-nav .nav-item .btn span {
-    font-size: 12px; /* Ukuran teks */
-    margin-bottom: -4px;
+  font-size: 12px; /* Ukuran teks */
+  margin-bottom: -4px;
 }
 
 /* Navbar button active state */
 .navbar-nav .nav-item .btn.active {
-    color: #4a1008;
-    font-weight: bold;
+  color: #4a1008;
+  font-weight: bold;
 }
 
 /* Animasi slide down untuk halaman yang muncul */
 @keyframes slide-in-down {
-    from {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Animasi slide up untuk halaman yang hilang */
 @keyframes slide-out-up {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 }
 
 .slide-in-down {
-    animation: slide-in-down 1.5s ease forwards;
+  animation: slide-in-down 1.5s ease forwards;
 }
 
 .slide-out-up {
-    animation: slide-out-up 1.5s ease forwards;
+  animation: slide-out-up 1.5s ease forwards;
 }
 
 /* Countdown Container */
 #countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    color: #641b0f;
-    text-align: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #641b0f;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* Individual time box */
 .countdown-item {
-    background: rgba(240, 217, 185, 0.5);
-    padding: 0;
-    margin: 8px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-grow: 1;
-    width: 50px;
+  background: rgba(240, 217, 185, 0.5);
+  padding: 0;
+  margin: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  width: 50px;
 }
 
 /* Countdown Number */
 .countdown-item .number {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: -5px;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: -5px;
 }
 
 /* Countdown Label */
 .countdown-item .label {
-    font-size: 0.75em;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* Pulsing effect */
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    
-    .countdown-item {
-        padding: 0px 0px;
-        margin: 5px;
-        width: 55px;
-    }
+  .countdown-item {
+    padding: 0px 0px;
+    margin: 5px;
+    width: 55px;
+  }
 
-    .countdown-item .number {
-        font-size: 2em;
-    }
+  .countdown-item .number {
+    font-size: 2em;
+  }
 
-    .countdown-item .label {
-        font-size: 0.65em;
-    }
+  .countdown-item .label {
+    font-size: 0.65em;
+  }
 }
 
 @media (max-width: 340px) {
-    .card-body .nama-pengantin {
-        font-size: 20px;
-    }
+  .card-body .nama-pengantin {
+    font-size: 20px;
+  }
 
-    .countdown-item {
-        padding: 0px 0px;
-        margin: 5px;
-    }
+  .countdown-item {
+    padding: 0px 0px;
+    margin: 5px;
+  }
 
-    .countdown-item .number {
-        font-size: 1.5em;
-    }
+  .countdown-item .number {
+    font-size: 1.5em;
+  }
 
-    .countdown-item .label {
-        font-size: 0.6em;
-    }
+  .countdown-item .label {
+    font-size: 0.6em;
+  }
 }
