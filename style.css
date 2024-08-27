@@ -4,6 +4,39 @@ body {
   color: #641b0f;
 }
 
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #e8d5ab;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #a99562;
+  border-top: 6px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
 /* Styling untuk halaman pembuka undangan */
 #pre-invitation {
   position: absolute;
@@ -18,6 +51,20 @@ body {
   align-items: center;
   flex-direction: column;
   z-index: 9999;
+}
+
+.bg-first {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 
 .opening {
@@ -186,6 +233,29 @@ img {
   z-index: 9999;
 }
 
+#music-button-container {
+  z-index: 1000;
+  bottom: 8%;
+  right: 4.5px;
+}
+
+.btn-circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+
+.btn-primary.btn-circle {
+  background-color: #4a10089a;
+  border-color: #4a10089a;
+  border: 1px rgba(74, 16, 8, 0.297);
+}
+
+#music-icon {
+  padding: 6px 5px 0px 5px;
+}
+
 .frame-ws {
   position: absolute;
   top: 0;
@@ -240,6 +310,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  scroll-snap-align: start;
 }
 
 .page2 {
@@ -287,6 +358,10 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: -1;
+  scroll-snap-type: y mandatory;
 }
 
 .yth {
@@ -448,6 +523,10 @@ undangan1 {
   border-color: #4a10088d;
 }
 
+.editable.tq {
+  text-shadow: 0 0 #00000087;
+}
+
 .navbar {
   background-color: rgba(232, 213, 171, 0.6);
   width: 100%;
@@ -494,12 +573,45 @@ undangan1 {
 /* Animasi slide down untuk halaman yang muncul */
 @keyframes slide-in-down {
   from {
-    transform: translateY(-100%);
     opacity: 0;
+    transform: translateY(-200%);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpAnimation1 {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -513,6 +625,26 @@ undangan1 {
     transform: translateY(-100%);
     opacity: 0;
   }
+}
+
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: fade-in-down ease 2s forwards;
+  animation-delay: 0.5s;
+}
+
+.fade-in-down1 {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: fade-in-down1 ease 1.5s forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(0);
+  animation: fadeInUpAnimation1 ease 0.5s forwards;
+  animation-delay: 1s;
 }
 
 .slide-in-down {
@@ -536,7 +668,7 @@ undangan1 {
 
 /* Individual time box */
 .countdown-item {
-  background: rgba(240, 217, 185, 0.5);
+  background: rgba(240, 217, 185, 0.8);
   padding: 0;
   margin: 8px;
   border-radius: 10px;
