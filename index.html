@@ -6,14 +6,19 @@
     <title>Undangan Pernikahan</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&family=Lavishly+Yours&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>   
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>      
     <div id="pre-invitation" class="position-fixed">
-        <div class="opening" style="background-image: url(images/bg.svg);">
+        <div class="bg-first" style="background-image: url(images/bg.svg);">
+        <div class="opening fade-in-down">
             <div class="frame">
                 <div class="frame-tl frame-top animate__animated animate__fadeInTopLeft animate__slow">
                   <img src="images/2.png" alt="frame" class="w-100 blow-left">
@@ -30,13 +35,19 @@
             </div>
             <div class="undangan1">Undangan Pernikahan</div>
                 <h1 class="display-4">Irdhina </br>& </br>Syauqy</h1>
-                <div class="yth animate__animated animate__fadeInUp animate__slower text-center" style="font-size:14px;">Kepada Yth:<br />Bapak/Ibu/Saudara/i</div>
+                <div class="yth text-center" style="font-size:14px;">Kepada Yth:<br />Bapak/Ibu/Saudara/i</div>
                 <p class="guest-name" id="tamu-name">[Nama Tamu]</p>
             <button class="btn btn-primary" onclick="openInvitation()">Buka Undangan</button>
         </div>
+        </div>
     </div>
-    <div id="workspace-container" class="position-fixed h-100 w-100 full-screen" style="overflow: hidden;">
-        <div class="container mb-4" style="background-image: url(images/bg.svg);">
+    <div id="workspace-container" class="position-fixed h-100 w-100 full-screen">
+        <div id="music-button-container" class="position-fixed bottom-0 end-0 m-3 fade-in-up">
+            <button id="music-button" class="btn btn-primary btn-circle">
+              <i id="music-icon" class="fas fa-volume-up"></i>
+            </button>
+          </div>
+        <div id="fadeDownElement" class="container mb-4 fade-in-down1" style="background-image: url(images/bg.svg);">
         <div id="home" class="page" style="background-image: url(images/6.5.png); background-repeat: no-repeat; background-position: center; background-size: 350px;">
             <div class="frame-ws">
                 <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
@@ -157,7 +168,7 @@
                     <div class="color-accent h4 mb-2 editable animate__animated animate__fadeInDown animate__slower" style="font-size: 28.8px;">Tanda Kasih</div>
                     <div class="editable mb-4 animate__animated animate__fadeInDown animate__slower" style="font-size: 14.4px;">Terima kasih telah menambah semangat </br>kegembiraan pernikahan kami dengan </br>kehadiran dan hadiah indah Anda.</div>
                     
-                    <div style="display: flex; gap: 8px;">
+                    <div style="display: flex; gap: 8px; padding-top: .8rem;">
                         <button id="btnCashless" class="btn-gift btn btn-block btn-primary rounded-pill animate__animated animate__fadeInUp animate__slow" style="max-width: 150px; margin: auto; font-size: 14.4px;">🎁 Non-Tunai</button>
                         <button id="btnKirimKado" class="btn-gift btn btn-block btn-primary rounded-pill animate__animated animate__fadeInUp animate__slow" style="max-width: 150px; margin: auto; font-size: 14.4px;">🎁 Kirim Kado</button>
                     </div>
@@ -196,6 +207,36 @@
                 </div>
             </div>
         </div>
+        <div id="maps" class="page">
+            <div class="frame-ws">
+                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
+                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
+                </div>
+                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
+                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height:100%;">
+                <div style="width:100%;"><div class="editable text-center color-accent mb-3 animate__animated animate__fadeInDown animate__slow" style="font-size:24px;">Lokasi Acara</div>
+                    <div>
+                        <div style="position: relative; padding-bottom: 56.25%; height: 280px; overflow: hidden; border-radius: 2rem .5rem; margin-bottom: 20px; border: 4px solid var(--inv-border);" class="image-editable animate__animated animate__fadeInDown animate__slow">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d248.7870213519187!2d98.42301757278845!3d3.8971849577308237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f70!4m6!3e6!4m0!4m3!3m2!1d3.8971424999999997!2d98.4230638!5e0!3m2!1sid!2sid!4v1724397068605!5m2!1sid!2sid" width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="text-center animate__animated animate__fadeInUp animate__slow">
+                            <div class="editable tq color-accent" style="font-size:14.4px;">Kedai Sarapan (sebelah Diva Salon)</div>
+                            <div class="editable tq mb-3" style="font-size:14px;">Jl. Pemuda No. 60 H, Kel. Pekan Tanjung Pura, Kec. Tanjung Pura, Kab. Langkat, Sumatera Utara, 20853</div>
+                                <a href="https://maps.app.goo.gl/4SZECFGJJr8zR5aU7" class="link btn btn-primary rounded-pill mb-4 animate__animated animate__fadeInUp animate__slow" target="_blank" rel="nofollow noreferrer noopener">Buka Maps</a>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="terima-kasih" class="page">
             <div class="frame-ws">
                 <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
@@ -220,72 +261,43 @@
                 </div>
             </div>
         </div>
-        <div id="maps" class="page">
-            <div class="frame-ws">
-                <div class="frame-tl-ws frame-top animate__animated animate__fadeInTopLeft animate__slow">
-                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
-                </div>
-                <div class="frame-tr-ws frame-top animate__animated animate__fadeInTopRight animate__slow">
-                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
-                </div>
-                <div class="frame-bl-ws frame-bottom animate__animated animate__fadeInBottomLeft animate__slow">
-                  <img src="images/2.png" alt="frame" class="w-100 blow-left">
-                </div>
-                <div class="frame-br-ws frame-bottom animate__animated animate__fadeInBottomRight animate__slow">
-                  <img src="images/1.png" alt="frame" class="w-100 blow-right">
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center" style="height:100%;">
-                <div style="width:100%;"><div class="editable text-center color-accent mb-3 animate__animated animate__fadeInDown animate__slow" style="font-size:24px;">Lokasi Acara</div>
-                    <div>
-                        <div style="position: relative; padding-bottom: 56.25%; height: 280px; overflow: hidden; border-radius: 2rem .5rem; margin-bottom: 20px; border: 4px solid var(--inv-border);" class="image-editable animate__animated animate__fadeInDown animate__slow">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d248.7870213519187!2d98.42301757278845!3d3.8971849577308237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f70!4m6!3e6!4m0!4m3!3m2!1d3.8971424999999997!2d98.4230638!5e0!3m2!1sid!2sid!4v1724397068605!5m2!1sid!2sid" width="600" height="450" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                        <div class="text-center animate__animated animate__fadeInUp animate__slow">
-                            <div class="editable color-accent" style="font-size:14.4px;">Kedai Sarapan (sebelah Diva Salon)</div>
-                            <div class="editable mb-3" style="font-size:14px;">Jl. Pemuda No. 60 H, Kel. Pekan Tanjung Pura, Kec. Tanjung Pura, Kab. Langkat, Sumatera Utara, 20853</div>
-                                <a href="https://maps.app.goo.gl/4SZECFGJJr8zR5aU7" class="link btn btn-primary rounded-pill mb-4 animate__animated animate__fadeInUp animate__slow" target="_blank" rel="nofollow noreferrer noopener">Buka Maps</a>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-        </div>
        </div>
-       <nav class="navbar fixed-bottom navbar-light shadow">
+    
+       <nav id="fadeUpElement" class="navbar fixed-bottom navbar-light shadow fade-in-up">
         <div class="kotak-nav">
             <ul class="navbar-nav d-flex flex-row justify-content-between w-100">
                 <li class="nav-item" data-page-id="home">
-                    <button class="btn w-100" onclick="showPage('home')">
+                    <button class="btn w-100" onclick="scrollPage('home')">
                         <i class="fas fa-home"></i>
                         <span>Utama</span>
                     </button>
                 </li>
                 <li class="nav-item" data-page-id="nama">
-                    <button class="btn w-100" onclick="showPage('nama')">
+                    <button class="btn w-100" onclick="scrollPage('nama')">
                         <i class="fas fa-user-friends"></i>
                         <span>Mempelai</span>
                     </button>
                 </li>
                 <li class="nav-item" data-page-id="jadwal">
-                    <button class="btn w-100" onclick="showPage('jadwal')">
+                    <button class="btn w-100" onclick="scrollPage('jadwal')">
                         <i class="fas fa-calendar-alt"></i>
                         <span>Jadwal</span>
                     </button>
                 </li>
                 <li class="nav-item" data-page-id="turut">
-                    <button class="btn w-100" onclick="showPage('turut')">
+                    <button class="btn w-100" onclick="scrollPage('turut')">
                         <i class="fas fa-users"></i>
                         <span>Hadiah</span>
                     </button>
                 </li>
                 <li class="nav-item" data-page-id="maps">
-                    <button class="btn w-100" onclick="showPage('maps')">
+                    <button class="btn w-100" onclick="scrollPage('maps')">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Lokasi</span>
                     </button>
                 </li>
                 <li class="nav-item" data-page-id="terima-kasih">
-                    <button class="btn w-100" onclick="showPage('terima-kasih')">
+                    <button class="btn w-100" onclick="scrollPage('terima-kasih')">
                         <i class="fas fa-heart"></i>
                         <span>Thanks</span>
                     </button>
