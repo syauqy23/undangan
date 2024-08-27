@@ -1,7 +1,20 @@
-let pages = document.querySelectorAll(".page");
 let currentPageIndex = 0;
+let scrollPosition = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
   const pages = document.querySelectorAll(".page");
+  // Dapatkan elemen dengan ID 'fadeDownElement'
+  var fadeDownElement = document.getElementById('fadeDownElement');
+
+  // Tambahkan event listener untuk mendeteksi akhir animasi
+  fadeDownElement.addEventListener('animationend', function(event) {
+      // Periksa jika animasi yang selesai adalah 'fade-in-down1'
+      if (event.animationName === 'fade-in-down1') {
+          // Hapus kelas 'fade-in-down1'
+          fadeDownElement.classList.remove('fade-in-down1');
+      }
+  });
+  
   let startX, startY, endX, endY;
 
   document.addEventListener("touchstart", (event) => {
@@ -19,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (deltaX > deltaY) {
       if (endX > startX) {
         // Swipe right
-        showPage("next");
+        scrollPage("next");
       } else {
         // Swipe left
-        showPage("prev");
+        scrollPage("prev");
       }
     }
   });
@@ -30,16 +43,37 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("wheel", (event) => {
     if (event.deltaY > 0) {
       // Scroll down
-      showPage("next");
+      scrollPage("next");
     } else {
       // Scroll up
-      showPage("prev");
+      scrollPage("prev");
     }
   });
 
+  // Loading screen disembunyikan setelah halaman sepenuhnya dimuat
+  const loadingScreen = document.getElementById("loading-screen");
+  
+  // Menunggu semua konten halaman dimuat sepenuhnya
+  window.onload = () => {
+    loadingScreen.style.display = "none";
+  };
+
   // Inisiasi countdown dan event listeners
-  showPage("home");
+  scrollPage("home");
   startCountdown();
+
+  // Attach event listeners for cashless and kirim kado buttons
+  document.getElementById("btnCashless").addEventListener("click", function () {
+    document.getElementById("cashlessContainer").style.display = "block";
+    document.getElementById("kirimKadoContainer").style.display = "none";
+  });
+
+  document.getElementById("btnKirimKado").addEventListener("click", function () {
+    document.getElementById("cashlessContainer").style.display = "none";
+    document.getElementById("kirimKadoContainer").style.display = "block";
+  });
+
+  // Setup other event listeners
   setupEventListeners();
 
   // Menampilkan halaman utama dan workspace-container
@@ -69,7 +103,45 @@ function openInvitation() {
   document.getElementById("workspace-container").classList.remove("d-none");
 
   openFullscreen();
+
+const musicButton = document.getElementById("music-button");
+const musicIcon = document.getElementById("music-icon");
+
+const music = new Audio("audio/theme.mp3");
+let isPlaying = false;
+
+musicButton.addEventListener("click", () => {
+  if (isPlaying) {
+    music.pause();
+    musicIcon.classList.remove("fa-pause");
+    musicIcon.classList.add("fa-volume-up");
+  } else {
+    music.play();
+    musicIcon.classList.remove("fa-volume-up");
+    musicIcon.classList.add("fa-pause");
+  }
+  isPlaying = !isPlaying;
+});
+
+music.addEventListener("ended", () => {
+  music.currentTime = 0;
+  music.play();
+});
+
+const context = new (window.AudioContext || window.webkitAudioContext)();
+const gainNode = context.createGain();
+gainNode.gain.setValueAtTime(0, context.currentTime);
+gainNode.connect(context.destination);
+
+music.addEventListener("canplaythrough", () => {
+  gainNode.gain.linearRampToValueAtTime(1, context.currentTime + 1);
+  music.play();
+  musicIcon.classList.remove("fa-volume-up");
+  musicIcon.classList.add("fa-pause");
+  isPlaying = true;
+});
 }
+
 
 function openFullscreen() {
   if (document.documentElement.requestFullscreen) {
@@ -98,25 +170,46 @@ function requestFullscreen() {
   }
 }
 
-function showPage(pageId) {
-  if (pageId === "next") {
-    currentPageIndex++;
-    if (currentPageIndex >= pages.length) {
-      currentPageIndex = 0;
+function scrollPage(pageId) {
+    if (pageId === "next") {
+      scrollPosition += window.innerHeight;
+    } else if (pageId === "prev") {
+      scrollPosition -= window.innerHeight;
     }
-    pageId = pages[currentPageIndex].id;
-  } else if (pageId === "prev") {
-    currentPageIndex--;
-    if (currentPageIndex < 0) {
-      currentPageIndex = pages.length - 1;
-    }
-    pageId = pages[currentPageIndex].id;
+  
+    if (scrollPosition < 0) {
+      scrollPosition = 0;
+    } else if (scrollPosition > document.body.scrollHeight - window.innerHeight) {
+      scrollPosition = document
   }
+  
+
+  window.scrollTo(0, scrollPosition);
+
+// Fungsi untuk menggulir ke halaman yang dituju
+  const page = document.getElementById(pageId);
+  if (page) {
+    page.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Tambahkan event listener pada setiap tombol menu
+const navItems = document.querySelectorAll('.navbar-nav .nav-item');
+navItems.forEach((item) => {
+  item.addEventListener('click', (event) => {
+    const pageId = item.getAttribute('data-page-id');
+    const activeNavItem = document.querySelector('.navbar-nav .nav-item.active');
+
+if (activeNavItem) {
+  activeNavItem.classList.remove('active');
+}
+    item.classList.add('active');
+  });
+});
 
   // Semua halaman disembunyikan dengan menambahkan class 'd-none'
   const pages = document.querySelectorAll(".page");
   pages.forEach((page) => {
-    page.classList.add("d-none");
     page.classList.remove("slide-in-down", "slide-out-up");
     document.getElementById("cashlessContainer").style.display = "none";
     document.getElementById("kirimKadoContainer").style.display = "none";
@@ -134,77 +227,19 @@ function showPage(pageId) {
   // Tampilkan halaman yang dipilih dan tambahkan animasi
   const selectedPage = document.getElementById(pageId);
   if (selectedPage) {
-    selectedPage.classList.remove("d-none");
     selectedPage.classList.add("slide-in-down");
   }
 
-  // Sembunyikan cashlessContainer dan kirimKadoContainer dengan animasi
-  const cashlessContainer = document.getElementById("cashlessContainer");
-  const kirimKadoContainer = document.getElementById("kirimKadoContainer");
-
-  if (cashlessContainer) {
-    cashlessContainer.classList.remove("slide-in-down");
-    cashlessContainer.classList.add("slide-out-up");
-    setTimeout(() => (cashlessContainer.style.display = "none"), 500); // Menunggu animasi selesai
-  }
-
-  if (kirimKadoContainer) {
-    kirimKadoContainer.classList.remove("slide-in-down");
-    kirimKadoContainer.classList.add("slide-out-up");
-    setTimeout(() => (kirimKadoContainer.style.display = "none"), 500); // Menunggu animasi selesai
-  }
-
-  document.getElementById("btnCashless").addEventListener("click", function () {
-    const cashlessContainer = document.getElementById("cashlessContainer");
-    const kirimKadoContainer = document.getElementById("kirimKadoContainer");
-
-    kirimKadoContainer.style.display = "none";
-    kirimKadoContainer.classList.remove("slide-in-down");
-    kirimKadoContainer.classList.add("slide-out-up");
-
-    cashlessContainer.style.display = "block";
-    cashlessContainer.classList.remove("slide-out-up");
-    cashlessContainer.classList.add("slide-in-down");
-  });
-
-  document
-    .getElementById("btnKirimKado")
-    .addEventListener("click", function () {
-      const cashlessContainer = document.getElementById("cashlessContainer");
-      const kirimKadoContainer = document.getElementById("kirimKadoContainer");
-
-      cashlessContainer.style.display = "none";
-      cashlessContainer.classList.remove("slide-in-down");
-      cashlessContainer.classList.add("slide-out-up");
-
-      kirimKadoContainer.style.display = "block";
-      kirimKadoContainer.classList.remove("slide-out-up");
-      kirimKadoContainer.classList.add("slide-in-down");
-    });
-
-  // Hapus class 'active' dari semua tombol di navbar
-  const navItems = document.querySelectorAll(".navbar-nav .nav-item .btn");
-  navItems.forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  // Tambahkan class 'active' ke tombol yang dipilih
-  const activeBtn = document.querySelector(
-    `.navbar-nav .nav-item .btn[onclick="showPage('${pageId}')"]`
-  );
-  if (activeBtn) {
-    activeBtn.classList.add("active");
-  }
   // Update navbar menu item's active state
-  const navbarMenuItems = document.querySelectorAll(".navbar-nav .nav-item");
-  navbarMenuItems.forEach((item) => {
-    if (item.getAttribute("data-page-id") === pageId) {
-      item.classList.add("active");
-    } else {
-      item.classList.remove("active");
-    }
+const navbarMenuItems = document.querySelectorAll(".navbar-nav .nav-item");
+navbarMenuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navbarMenuItems.forEach((menuItem) => {
+      menuItem.classList.remove("active");
+    });
+    item.classList.add("active");
   });
-}
+});
 
 function startCountdown() {
   const countDownDate = new Date("September 22, 2024 08:00:00").getTime();
@@ -232,12 +267,3 @@ function startCountdown() {
     document.getElementById("seconds").innerText = seconds;
   }, 1000);
 }
-document.getElementById("btnCashless").addEventListener("click", function () {
-  document.getElementById("cashlessContainer").style.display = "block";
-  document.getElementById("kirimKadoContainer").style.display = "none";
-});
-
-document.getElementById("btnKirimKado").addEventListener("click", function () {
-  document.getElementById("cashlessContainer").style.display = "none";
-  document.getElementById("kirimKadoContainer").style.display = "block";
-});
