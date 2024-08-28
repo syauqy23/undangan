@@ -67,6 +67,13 @@ body {
   z-index: 1;
 }
 
+.bg-second {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  z-index: -1;
+}
+
 .opening {
   height: 100%;
   width: 100%;
@@ -354,13 +361,21 @@ img {
   color: #641b0f;
 }
 
+.kartu3 h1{
+  font-family: "Alkatra", system-ui;
+}
+
+.kartu3 h3{
+  font-family: "Alkatra", system-ui;
+}
+
 .container.mb-4 {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  z-index: -1;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: -1;
   scroll-snap-type: y mandatory;
 }
 
@@ -604,6 +619,17 @@ undangan1 {
   }
 }
 
+@keyframes fade-in-down2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInUpAnimation1 {
   0% {
     opacity: 0;
@@ -638,6 +664,11 @@ undangan1 {
   opacity: 0;
   transform: translateY(-100%);
   animation: fade-in-down1 ease 1.5s forwards;
+}
+
+.fade-in-down2 {
+  opacity: 0;
+  animation: fade-in-down2 ease 1s forwards;
 }
 
 .fade-in-up {
