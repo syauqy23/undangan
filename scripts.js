@@ -242,7 +242,7 @@ navbarMenuItems.forEach((item) => {
 });
 
 function startCountdown() {
-  const countDownDate = new Date("September 22, 2024 08:00:00").getTime();
+  const countDownDate = new Date("September 22, 2024 10:00:00").getTime();
 
   const countdownInterval = setInterval(() => {
     const now = new Date().getTime();
